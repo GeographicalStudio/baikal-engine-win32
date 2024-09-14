@@ -1,16 +1,24 @@
 #include <windows.h>
 #include "window.h"
+#include "graphics.h"
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    static graphics* pGraphics = nullptr;
     switch (uMsg) {
+    case WM_CREATE:
+        pGraphics = new graphics(hwnd);
+        return 0;
     case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hwnd, &ps);
-            Rectangle(hdc, 10, 10, 100, 100);
-            EndPaint(hwnd, &ps);
+        if (pGraphics) {
+            pGraphics->beginDraw();
+            pGraphics->drawRectangle(50, 50, 200, 100, RGB(255, 0, 0));
+            pGraphics->endDraw();
         }
         return 0;
     case WM_DESTROY:
+        if (pGraphics) {
+            delete pGraphics;
+            pGraphics = nullptr;
+        }
         PostQuitMessage(0);
         return 0;
     }
