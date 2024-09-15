@@ -1,10 +1,56 @@
 mod_matrix: 1,1,1,1,1,1
 polygons:
-    polygon1:
-        vertex1:
-            (0,0,0)
-        vertex2:
-            (0,1,0)
-        vertex3:
-            (1,1,0)
-#etc
+    face1:
+        triangle1:
+            vertex1: (0,0,0)
+            vertex2: (0,1,0)
+            vertex3: (1,1,0)
+        triangle2:
+            vertex1: (0,0,0)
+            vertex2: (1,1,0)
+            vertex3: (1,0,0)
+    face2:
+        triangle1:
+            vertex1: (0,0,0)
+            vertex2: (1,0,0)
+            vertex3: (1,0,1)
+        triangle2:
+            vertex1: (0,0,0)
+            vertex2: (1,0,1)
+            vertex3: (0,0,1)
+    face3:
+        triangle1:
+            vertex1: (0,0,0)
+            vertex2: (0,0,1)
+            vertex3: (0,1,1)
+        triangle2:
+            vertex1: (0,0,0)
+            vertex2: (0,1,1)
+            vertex3: (0,1,0)
+    face4:
+        triangle1:
+            vertex1: (0,1,0)
+            vertex2: (0,1,1)
+            vertex3: (1,1,1)
+        triangle2:
+            vertex1: (0,1,0)
+            vertex2: (1,1,1)
+            vertex3: (1,1,0)
+    face5:
+        triangle1:
+            vertex1: (1,0,0)
+            vertex2: (1,0,1)
+            vertex3: (1,1,1)
+        triangle2:
+            vertex1: (1,0,0)
+            vertex2: (1,1,1)
+            vertex3: (1,1,0)
+    face6:
+        triangle1:
+            vertex1: (0,0,1)
+            vertex2: (1,0,1)
+            vertex3: (1,1,1)
+        triangle2:
+            vertex1: (0,0,1)
+            vertex2: (1,1,1)
+            vertex3: (0,1,1)
