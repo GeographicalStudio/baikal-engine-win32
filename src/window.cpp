@@ -32,7 +32,7 @@ bool window::initWindow(int windowSizeX, int windowSizeY, LPCSTR windowTitle) {
     wc.hInstance = hInstance;
     wc.lpszClassName = CLASS_NAME;
     RegisterClass(&wc);
-    hwnd_ = CreateWindowEx(0,CLASS_NAME,windowTitle,WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT,windowSizeX, windowSizeY,NULL,NULL,GetModuleHandle(nullptr),NULL);
+    hwnd_ = CreateWindowEx(0,CLASS_NAME,windowTitle,WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT,windowSizeX, windowSizeY,NULL,NULL,hInstance,NULL);
     if (hwnd_ == NULL) {
         return false;
     }
@@ -48,5 +48,8 @@ void window::runMessageLoop() {
     }
 }
 void window::releaseWindow() {
-    free(hwnd_);
+    if (hwnd_) {
+        DestroyWindow(hwnd_);
+        hwnd_ = nullptr;
+    }
 }
