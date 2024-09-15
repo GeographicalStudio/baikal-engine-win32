@@ -1,0 +1,10 @@
+mod_matrix: 1,1,1,1,1,1
+polygons:
+    polygon1:
+        vertex1:
+            (0,0,0)
+        vertex2:
+            (0,1,0)
+        vertex3:
+            (1,1,0)
+#etc
