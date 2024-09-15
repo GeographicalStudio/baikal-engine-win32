@@ -5,3 +5,4 @@ open an issue on the github page.
 Make sure to say anything about features that you'll want to add,
 just contribute to the project or say to a friend to contribute,
 everyone will appericate it!
+If you're wondering what is a .bmf file, it's Baikal Model Format.
